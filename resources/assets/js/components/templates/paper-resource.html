@@ -1,0 +1,15 @@
+
+<a @click="onClickResource" class="list-group-item clearfix" :class="statusClass" :style="clickable">
+    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw pull-right" v-if="loading"></i>
+
+    <h4 class="list-group-item-heading" style="word-break: break-all">[[ resource.context.url ]]</h4>
+    <p class="list-group-item-text">
+        [[ resource.context.type_description ]]
+
+        <span v-if="!loading">
+            [[ onlineLabel ]]
+        </span>
+
+    </p>
+
+</a>

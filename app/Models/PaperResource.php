@@ -19,10 +19,11 @@ class PaperResource extends Model
     protected $table = 'paper_resources';
 
     protected $casts = [
-        'print' => 'bool'
+        'print' => 'bool',
+        'active' => 'bool'
     ];
 
-    protected $appends = ['active_label', 'online_label', 'type_label'];
+    protected $appends = ['active_label', 'online_label', 'type_label', 'type_description'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -62,8 +63,27 @@ class PaperResource extends Model
         return null;
     }
 
+    /**
+     * @return string
+     */
     public function getTypeLabelAttribute()
     {
         return ucfirst($this->type);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypeDescriptionAttribute()
+    {
+        switch ($this->type) {
+            case 'original':
+                return 'This is the internet source\'s original address.';
+            case 'local':
+                return 'This is a specifically saved copy.';
+            case 'mirror':
+                return 'This is an alternative source for the original.';
+        }
+        return 'This is something else ...';
     }
 }

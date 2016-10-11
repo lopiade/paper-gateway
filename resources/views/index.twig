@@ -6,6 +6,14 @@
 
         <p>Hier steht mein text</p>
 
+
+        <div class="container">
+            {% if session_has('error') %}
+                <div class="alert alert-danger">{{ session_get('error') }}</div>
+            {% endif %}
+        </div>
+
+
         <h2>Enter slug</h2>
 
         <form class="form form-inline" method="post">
@@ -13,6 +21,9 @@
             <button class="btn btn-default btn-lg">GO!!!</button>
             {{ csrf_field() }}
         </form>
+
+
+        <paper-resources></paper-resources>
 
     </div>
 

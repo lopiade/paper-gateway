@@ -57,7 +57,9 @@ trait HashableId {
 
             $decoded = $hashids->decode($id);
 
-            if (is_array($decoded)) {
+//            dd($decoded);
+
+            if (is_array($decoded) && ! empty($decoded) ) {
                 return $decoded[0];
             }
 

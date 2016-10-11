@@ -27,10 +27,27 @@ class Paper extends Model
         'print' => 'bool'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function resource()
     {
-        return $this->hasMany(PaperResource::class, 'paper_id');
+        return $this->hasMany(PaperResource::class, 'paper_id')->orderBy('type','desc');
     }
 
+    /**
+     * @param $slug
+     * @return $this|bool
+     */
+    public function scopePrintResources($slug)
+    {
+        $paper = $this->findByPublicId($slug); /** @var Paper $paper */
+
+        if ( ! $paper || ! $paper->print) return false;
+
+        return $paper->load(['resource' => function($q) {
+            $q->where('print','=',true);
+        }]);
+    }
 
 }
