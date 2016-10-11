@@ -1,0 +1,48 @@
+{% extends 'admin.app.main' %}
+
+{% block content %}
+    <div class="container">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Slug</th>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for paper in papers %}
+            <tr>
+                <td>
+                    {% if paper.print %}
+                        <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+                    {% else %}
+                        <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
+                    {% endif %}
+                </td>
+                <td>{{ paper.id }}</td>
+                <td>{{ paper.public_id }}</td>
+                <td>{{ paper.title }}</td>
+                <td>{{ paper.subtitle }}</td>
+                <td class="text-right">
+                    <a href="{{ route('admin::paper::show', paper.id) }}" class="btn btn-default">Edit</a>
+                </td>
+                <td class="text-right">
+                    <form method="post" action="{{ route('admin::paper::delete',paper.id) }}">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <input type="hidden" name="_method" value="DELETE">
+                        {{ csrf_field() }}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}

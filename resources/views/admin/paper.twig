@@ -1,0 +1,98 @@
+{% extends 'admin.app.main' %}
+
+{% block content %}
+    <div class="container">
+
+        <h1>{{ paper.title }} ({{ paper.public_id }})</h1>
+        <small>{{ paper.subtitle }}</small>
+
+        <table class="table" style="margin-top: 25px">
+            <thead>
+            <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Url</th>
+                <th>Type</th>
+                <th>Active</th>
+                <th>Online</th>
+                <th></th>
+            </tr>
+            </thead>
+            {% for resource in paper.resource %}
+            <tr>
+                <td>
+                    {% if resource.print %}
+                        <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+                    {% else %}
+                        <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
+                    {% endif %}
+                </td>
+                <td>{{ resource.id }}</td>
+                <td>{{ resource.url }}</td>
+                <td>{{ resource.type_label }}</td>
+                <td>{{ resource.active_label }}</td>
+                <td>{{ resource.online_label }}</td>
+                <td class="text-right">
+                    <form method="post" action="{{ route('admin::paper::resource::delete',[paper.id, resource.id]) }}">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <input type="hidden" name="_method" value="DELETE">
+                        {{ csrf_field() }}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <hr>
+
+        <form class="form-horizontal" method="post" action="{{ route('admin::paper::resource::store', paper.id) }}" style="margin-top: 75px">
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">URL</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" placeholder="URL" name="url">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Type</label>
+                <div class="col-sm-9">
+                    <select class="form-control" name="type">
+                        <option value="original">Original</option>
+                        <option value="mirror">Mirror</option>
+                        <option value="local">Local</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Active</label>
+                <div class="col-sm-9">
+                    <select class="form-control" name="active">
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Online</label>
+                <div class="col-sm-9">
+                    <select class="form-control" name="online">
+                        <option value="0">Auto</option>
+                        <option value="1">Online</option>
+                        <option value="2">Offline</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-success pull-right" type="submit">Save</button>
+
+            {{ csrf_field() }}
+        </form>
+
+    </div>
+
+{% endblock %}
