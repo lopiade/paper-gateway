@@ -156,6 +156,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+        /*
+         * Vendor service providers
+         */
+
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        TwigBridge\ServiceProvider::class,
     ],
 
     /*
@@ -201,7 +208,7 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-
+        'Twig'      => TwigBridge\Facade\Twig::class,
     ],
 
 ];
