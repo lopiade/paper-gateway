@@ -1,19 +1,19 @@
 {% extends 'layouts.layout' %}
 
 {% block content %}
-
     <div class="container text-center Index">
 
-        <p class="Index__Teaser">This is a gateway providing permalinks for working papers and other online sources.<br>
-            Enter a valid slug (= unique PaperGatewayId) to be directed to the available internet addresses for the desired online source.</p>
-
+        <p class="Index__Teaser">
+            This is a gateway providing permalinks for working papers and other online sources.<br>
+            Enter a valid slug (= unique PaperGatewayId) to be directed to available internet addresses for
+            the desired online source.
+        </p>
 
         <div class="container">
             {% if session_has('error') %}
                 <div class="alert alert-danger">{{ session_get('error') }}</div>
             {% endif %}
         </div>
-
 
         <h2 class="Index__Slug">Enter slug</h2>
 
@@ -23,9 +23,7 @@
             {{ csrf_field() }}
         </form>
 
-
         <paper-resources></paper-resources>
 
     </div>
-
 {% endblock %}
