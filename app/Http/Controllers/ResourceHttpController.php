@@ -16,6 +16,9 @@ use App\Http\Requests;
 class ResourceHttpController extends Controller
 {
 
+
+    protected $acceptedStatus = [200,304];
+
     /**
      * @param PaperResource $paperResource
      * @param $resource_id
@@ -27,7 +30,9 @@ class ResourceHttpController extends Controller
 
         $online = true;
 
-        if (Curl::request($resource->url)->status != 200) {
+        if ( ! $status = in_array(Curl::request($resource->url)->status, $this->acceptedStatus) ) {
+
+            \Log::alert('status',[$status]);
 
             $online = false;
             event( new ServerWasNotFound($resource) );

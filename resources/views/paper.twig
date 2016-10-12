@@ -11,17 +11,14 @@
 
         <paper-resources></paper-resources>
 
-
-        <p class="Paper__Permalink">This internet source's slug is "{{ paper.public_id }}", you might cite this with it's permalink: <strong>http://wansleben.work/{{ paper.public_id }}</strong></p>
+        <p class="Paper__Permalink">This internet source's slug is "{{ paper.public_id }}", you might cite this with it's permalink: <strong>{{ route('paper',paper.public_id) }}</strong></p>
 
     </div>
 
 {% endblock %}
 
 {% block js %}
-
     <script>
         var resources = {{ paper.resource|raw }};
     </script>
-
 {% endblock %}

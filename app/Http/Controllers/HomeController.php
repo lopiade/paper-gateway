@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Support\Curl;
 use Illuminate\Http\Request;
 
 /**
