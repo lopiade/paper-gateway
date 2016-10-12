@@ -19,6 +19,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        dd( Curl::request('http://ssrn.com/abstract=2837009') );
+
         return view('index');
     }
 

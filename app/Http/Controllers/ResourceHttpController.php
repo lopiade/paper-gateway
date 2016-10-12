@@ -17,7 +17,7 @@ class ResourceHttpController extends Controller
 {
 
 
-    protected $acceptedStatus = [200,304];
+    protected $acceptedStatus = [200,304,302,301];
 
     /**
      * @param PaperResource $paperResource
