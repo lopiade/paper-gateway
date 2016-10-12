@@ -1,36 +1,31 @@
 
+@funnycolor: rgb(255, 116, 0);
+@brandcolor: #7f7f7f;
+@blackcolor: #454545;
+
 @import "../vendor/bootstrap/bootstrap";
+@import "_layout";
+@import "_index";
+@import "_paper";
 
-
-
-.Paper {
-
-
-
-  .Paper__Header {
-
-    margin: 0 15%;
-    margin-bottom: 50px;
-    text-align: center;
-
-
-
-    h1 {
-      margin: 0;
-      padding: 0;
-    }
-
-    small {
-
-      font-size: 12px;
-      color: #2e3436;
-
-    }
-
-  }
-
-
+html {
+  position: relative;
+  min-height: 100%;
 }
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+a {
+  color: @funnycolor;
+   &:hover {
+     color: @funnycolor;
+  }
+}
+
+
+
 
 
 .resource-inactive {

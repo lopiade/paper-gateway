@@ -25,11 +25,9 @@ export default {
                 return 'resource-inactive';
             }
 
-
             if ( ! this.loading) {
                 return this.resource.online ? 'list-group-item-success' : 'list-group-item-danger';
             }
-
         },
 
         clickable() {
@@ -46,8 +44,22 @@ export default {
             } else {
                 return 'Currently not available.'
             }
-            
+        },
+
+        onlineIcon() {
+            switch (this.resource.context.type) {
+                case 'original':
+                    return 'fa-globe';
+                
+                case 'mirror':
+                    return 'fa-clone';
+                
+                case 'local':
+                    return 'fa-cloud-download';
+            }
+            return 'fa-link';
         }
+
     },
 
     /**
@@ -99,11 +111,8 @@ export default {
 
             resource.save({id: this.resource.context.id},{}).then(response => {
 
-
                 this.resource.status = 'success';
-                this.resource.online = true;
-
-                //
+                this.resource.online = response.data.is_online;
 
             }, () => {
 

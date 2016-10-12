@@ -6,13 +6,13 @@
 
         <div class="Paper__Header">
             <h1>{{ paper.title }}</h1>
-            <small>{{ paper.subtitle }}</small>
+            <h2>{{ paper.subtitle }}</h2>
         </div>
 
         <paper-resources></paper-resources>
 
 
-        <p>This internet source's slug is "{{ paper.public_id }}", you might cite this with it's permalink: <strong>http://wansleben.work/{{ paper.public_id }}</strong></p>
+        <p class="Paper__Permalink">This internet source's slug is "{{ paper.public_id }}", you might cite this with it's permalink: <strong>http://wansleben.work/{{ paper.public_id }}</strong></p>
 
     </div>
 

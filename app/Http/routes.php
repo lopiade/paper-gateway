@@ -1,9 +1,12 @@
 <?php
-//
 Route::group(['middleware' => ['web']], function () {
-    Route::auth();
+//    Route::auth();
+
+    $this->get('login', 'Auth\AuthController@showLoginForm');
+    $this->post('login', 'Auth\AuthController@login');
+    $this->get('logout', 'Auth\AuthController@logout');
+
 });
-//
 
 
 // BACKEND

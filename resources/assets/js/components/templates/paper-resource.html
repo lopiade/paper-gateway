@@ -4,6 +4,11 @@
 
     <h4 class="list-group-item-heading" style="word-break: break-all">[[ resource.context.url ]]</h4>
     <p class="list-group-item-text">
+
+        <span v-if="!loading">
+            <i class="fa fa-fw" :class="onlineIcon"></i>
+        </span>
+
         [[ resource.context.type_description ]]
 
         <span v-if="!loading">

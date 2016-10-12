@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->share('global_footer_url',env('APP_FOOTER_URL'));
+        view()->share('global_footer_text',env('APP_FOOTER_TEXT'));
     }
 
     /**

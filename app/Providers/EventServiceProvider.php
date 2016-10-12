@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
+use App\Events as Event;
+use App\Listeners as Listener;
+
 class EventServiceProvider extends ServiceProvider
 {
     /**
@@ -13,8 +16,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
+        Event\ServerWasNotFound::class => [
+            Listener\SendNotificationEmail::class,
         ],
     ];
 

@@ -2,6 +2,8 @@
 
 use App\Models\Paper;
 use App\Http\Requests;
+use App\Models\PaperResource;
+use App\Support\Curl;
 use Illuminate\Database\Eloquent\Collection;
 
 /**

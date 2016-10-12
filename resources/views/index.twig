@@ -2,9 +2,10 @@
 
 {% block content %}
 
-    <div class="container text-center">
+    <div class="container text-center Index">
 
-        <p>Hier steht mein text</p>
+        <p class="Index__Teaser">This is a gateway providing permalinks for working papers and other online sources.<br>
+            Enter a valid slug (= unique PaperGatewayId) to be directed to the available internet addresses for the desired online source.</p>
 
 
         <div class="container">
@@ -14,11 +15,11 @@
         </div>
 
 
-        <h2>Enter slug</h2>
+        <h2 class="Index__Slug">Enter slug</h2>
 
         <form class="form form-inline" method="post">
             <input type="text" class="form-control input-lg" name="slug">
-            <button class="btn btn-default btn-lg">GO!!!</button>
+            <button class="btn btn-default btn-lg"><i class="fa fa-arrow-circle-right" ></i></button>
             {{ csrf_field() }}
         </form>
 
