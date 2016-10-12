@@ -4,7 +4,6 @@
     <list default="true" id="f9b83c3e-b21c-45f0-bebc-37a12c372566" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ResourceHttpController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResourceHttpController.php" />
     </list>
     <ignored path="Twworkx.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+            <state relative-caret-position="338">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceHttpController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResourceHttpController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResourceHttpController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
@@ -184,8 +183,8 @@
         <option value="$PROJECT_DIR$/resources/assets/less/front/_paper.less" />
         <option value="$PROJECT_DIR$/resources/assets/less/front/_layout.less" />
         <option value="$PROJECT_DIR$/resources/assets/less/front/paper-gateway.less" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResourceHttpController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       </list>
     </option>
   </component>
@@ -728,7 +727,7 @@
       <option name="presentableId" value="Default" />
       <updated>1476184997964</updated>
       <workItem from="1476184999702" duration="27982000" />
-      <workItem from="1476218557465" duration="13035000" />
+      <workItem from="1476218557465" duration="13486000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1476201824205</created>
@@ -779,11 +778,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476235082012</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added another accepted status code">
+      <created>1476235331669</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1476235331669</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41017000" />
+    <option name="totallyTimeSpent" value="41468000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,7 +841,8 @@
     <MESSAGE value="wip" />
     <MESSAGE value="fix user" />
     <MESSAGE value="final work, design, minor bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="final work, design, minor bug fixes" />
+    <MESSAGE value="added another accepted status code" />
+    <option name="LAST_COMMIT_MESSAGE" value="added another accepted status code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1231,14 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Routes/frontend.routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -1251,6 +1250,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
